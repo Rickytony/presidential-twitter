@@ -5,7 +5,7 @@ const app = express();
 app.use(express.static("public"));
 
 app.get("/twitter/:searchQuery", (req, res) => {
-  twitter.searchTwitter(req.params.searchQuery).then(
+  twitter.searchTweets(req.params.searchQuery).then(
     tweets => {
       res.json(tweets);
     },
