@@ -12,14 +12,18 @@ const client = new Twitter(config);
 function searchTweets(query) {
   var params = {
     q: query,
-    result_type: "recent"
+    result_type: "recent",
+    count: 100,
+    tweet_mode: "extended"
   };
   return client.get("search/tweets", params).then(results => {
     const tweets = results.statuses.map(status => {
       return {
         id: status.id,
-        user: status.user.screen_name,
-        text: status.text
+        name: status.user.name,
+        text: status.full_text,
+        timestamp: status.created_at,
+        user: status.user.screen_name
       };
     });
     return tweets;
