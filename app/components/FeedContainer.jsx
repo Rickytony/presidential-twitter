@@ -1,5 +1,6 @@
 import React from "react";
 import { fetch } from "whatwg-fetch";
+import { Tweet } from "./Tweet.jsx";
 
 class FeedContainer extends React.Component {
   constructor() {
@@ -7,7 +8,7 @@ class FeedContainer extends React.Component {
 
     this.state = {
       tweets: [],
-      currentQuery: "@realDonaldTrump"
+      currentQuery: "realDonaldTrump"
     };
   }
 
@@ -31,7 +32,9 @@ class FeedContainer extends React.Component {
     }
     return (
       <div className="container mt-4">
-        <h1>Cheesy Chicken</h1>
+        {this.state.tweets.map(tweet => (
+          <Tweet tweet={tweet} />
+        ))}
       </div>
     );
   }
