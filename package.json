@@ -1,5 +1,5 @@
 {
-  "name": "twitter-feed-test",
+  "name": "presidential-twitter",
   "version": "1.0.0",
   "description": "An app to retrieve tweets about Donald Trump or Hillary Clinton",
   "main": "index.js",
