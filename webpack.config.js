@@ -1,9 +1,10 @@
 const path = require("path");
 require("@babel/register");
+require("@babel/polyfill");
 
 const config = {
   mode: "development",
-  entry: "./app/main.js",
+  entry: ["@babel/polyfill", "./app/main.js"],
   output: {
     path: path.resolve(__dirname, "./public/dist"),
     filename: "bundle.js"

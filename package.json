@@ -15,6 +15,7 @@
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/register": "^7.0.0",
+    "redux-logger": "^3.0.6",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
   },
@@ -30,6 +31,9 @@
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-html-parser": "^2.0.2",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.1",
     "style-loader": "^0.23.1",
     "twitter-lite": "^0.9.1",
     "whatwg-fetch": "^3.0.0"

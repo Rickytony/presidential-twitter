@@ -1,17 +1,26 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { getTweets } from "../actions";
 
 const FeedToggle = props => {
   return (
-    <button onClick={() => props.handleClick()}>
-      Show me @{props.nextQuery}
+    <button onClick={() => props.getTweets(props.nextQuery)}>
+      Show me tweets about @{props.nextQuery}
     </button>
   );
 };
 
-FeedToggle.proptypes = {
-  handleClick: PropTypes.func.isRequired,
-  nextQuery: PropTypes.string.isRequired
+const mapStateToProps = state => ({
+  nextQuery: state.queries.nextQuery
+});
+
+const mapDispatchToProps = {
+  getTweets: getTweets
 };
 
-export { FeedToggle };
+const ConnectedFeedToggle = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FeedToggle);
+
+export { ConnectedFeedToggle as FeedToggle };
